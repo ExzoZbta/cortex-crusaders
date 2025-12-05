@@ -70,7 +70,7 @@ The included game demonstrates the engine's capabilities:
 ## Technical Stack
 
 - **Language**: D Programming Language
-- **Graphics**: SDL2 (via bindbc-sdl)
+- **Graphics**: SDL2
 - **Build System**: DUB package manager
 - **Documentation**: Doxygen-generated API docs
 - **Editor**: Python 3 with tkinter
@@ -100,7 +100,7 @@ brew install python-tk
 **Windows/Linux:**
 Ensure SDL2 development libraries are installed and accessible.
 
-## 🎮 How to Play
+## How to Play
 
 1. Launch the game engine
 2. Press **E** to open the in-engine editor
