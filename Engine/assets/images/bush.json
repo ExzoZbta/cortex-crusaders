@@ -1,0 +1,12 @@
+{
+    "filepath":"./assets/images/bush.bmp",
+    "format":{
+        "width": 238,
+        "height": 249,
+        "tileWidth": 238,
+        "tileHeight": 249
+    },
+    "frames":{
+        "idle": [0]
+    }
+}

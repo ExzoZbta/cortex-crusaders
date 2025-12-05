@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike's Mode7 Massacre - Game Engine Final Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'PixelatedElegance';
+            src: url('fonts/PixelatedElegance.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .pixel-font {
+            font-family: 'PixelatedElegance', system-ui, -apple-system, sans-serif;
+        }
+
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        pixel: ['PixelatedElegance', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <header class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-7xl font-pixel mb-4 text-gray-900 pixel-font"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="hover:text-gray-900">MIKE'S MODE7 MASSACRE</a></h1>
+            <p class="text-xl text-gray-600 mt-2">CPSC 411: Final Project</p>
+            <p class="text-xl text-gray-600">By Richard Corrente, Archit Kumar, and Sachin Thakrar</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 space-y-24">
+        <section class="fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-center">Game Trailer</h2>
+            <div class="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                <div class="relative w-full" style="padding-top: 56.25%;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Ndv4Np7hmxY" 
+                        allow="autoplay; encrypted-media" 
+                        allowfullscreen
+                        class="absolute top-0 left-0 w-full h-full"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-center">Game Screenshots</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                    <img src="images/screenshot_1.png" alt="Game Screenshot 1" 
+                         class="rounded-lg shadow-md w-full transition-shadow duration-300 group-hover:shadow-xl screenshot-img">
+                </div>
+                <div class="group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                    <img src="images/screenshot_2.png" alt="Game Screenshot 2" 
+                         class="rounded-lg shadow-md w-full transition-shadow duration-300 group-hover:shadow-xl screenshot-img">
+                </div>
+                <div class="group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                    <img src="images/screenshot_3.png" alt="Game Screenshot 3" 
+                         class="rounded-lg shadow-md w-full transition-shadow duration-300 group-hover:shadow-xl screenshot-img">
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center fade-in">
+            <h2 class="text-3xl font-bold mb-6">Documentation</h2>
+            <a href="docs/index.html" 
+               class="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg transition-all duration-300 hover:bg-gray-800 hover:shadow-lg">
+                View Doxygen Documentation
+            </a>
+        </section>
+
+        <section class="fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-center">Engine Architecture</h2>
+            <div class="max-w-5xl mx-auto cursor-pointer">
+                <img src="images/engine_diagram.svg" alt="Engine Architecture Diagram" 
+                     class="rounded-lg shadow-lg w-full transition-all duration-300 hover:shadow-xl screenshot-img">
+            </div>
+        </section>
+
+        <section class="text-center fade-in">
+            <h2 class="text-3xl font-bold mb-6">Game Binary</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div>
+                    <a href="assets/bin" 
+                       class="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg transition-all duration-300 hover:bg-gray-800 hover:shadow-lg">
+                        Download Binary
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-8 text-left">
+                    <h3 class="text-2xl font-bold mb-4">Compile from Source</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Prerequisites</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>D + dub Package Manager</li>
+                                <li>SDL2 (at least version 2.0.16)</li>
+                                <li>Python3 with tkinter</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Build Instructions</h4>
+                            <div class="bg-gray-900 text-white p-6 rounded-lg font-mono text-sm">
+                                <pre class="whitespace-pre-wrap">$ cd engine
+$ dub run
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Platform-Specific Notes</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <h5 class="font-semibold">macOS</h5>
+                                    <p class="text-gray-700">Make sure to install tkinter via brew</p>
+                                    <div class="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm mt-2">
+                                        <pre class="whitespace-pre-wrap">$ brew install python-tk</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-8 text-left">
+                    <h3 class="text-2xl font-bold mb-4">Load in Game</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                <li>Launch the game engine, and press "E" to open the editor</li>
+                                <li>Go to the "Scene Manager" window, press "Load Scene", and select "mainmenu.json"</li>
+                                <li>Close the editor, and enjoy the game! You may have to look around to find the first capsule :)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-center">Post Mortem</h2>
+            <div class="max-w-3xl mx-auto bg-gray-50 rounded-lg p-8">
+                <p class="mb-6 text-gray-700 leading-relaxed">
+                    Implementing mode7 was far more difficult than we anticipated, and in ways we didn't expect. We managed to effectively integrate mode7 into our engine, but our issues lied in making sprites static on the ground. No matter how much we tried—and we spent (combined) at least 15 hours trying to get it to work—we couldn't get it to work. Every time the sprites would move relative to the camera, in some dimension. The game is essentially a compromise based off that, smaller in scope than our initial goal but still fun, with great graphics and useful engine features.
+                </p>
+                <p class="mb-6 text-gray-700 leading-relaxed">
+                    Given more time, it would have been nice to get to the root of the sprite issue with mode7, and make the game how we envisioned it: an open word explorer where one collects capsules. But a more useful tool would have been hindsight: we wasted so many hours trying to implement sprites, which would have been better spent on other features—like a better engine UI, for example. There are still some features that are incomplete, or not fully working on mode7, such as the collider viewer and some scene features. Again, if we had more time, we would have also implemented these!
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    Though this project wasn't as successful as we hoped, we netherless learned a lot about implementing and building game engines, which is the point of this class. We're glad we were able to implement mode7 (even if not completely), and build many of the features we wanted to.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Modal -->
+    <div class="modal fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center" id="imageModal">
+        <div class="max-w-7xl mx-auto px-4 relative">
+            <button class="absolute top-4 right-4 text-white text-4xl font-light" onclick="closeModal()">&times;</button>
+            <img id="modalImage" src="" alt="Full size image" class="max-h-screen w-auto object-contain">
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+
+        document.querySelectorAll('.screenshot-img, img[src$=".svg"]').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

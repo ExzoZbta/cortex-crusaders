@@ -1,0 +1,12 @@
+{
+    "filepath":"./assets/sprites/mike/mike-front.bmp",
+    "format":{
+        "width": 400,
+        "height": 450,
+        "tileWidth": 400,
+        "tileHeight": 450
+    },
+    "frames":{
+        "idle": [0]
+    }
+}

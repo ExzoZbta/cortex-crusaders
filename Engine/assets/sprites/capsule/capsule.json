@@ -1,0 +1,12 @@
+{
+    "filepath":"./assets/sprites/capsule/capsule.bmp",
+    "format":{
+        "width": 250,
+        "height": 250,
+        "tileWidth": 250,
+        "tileHeight": 250
+    },
+    "frames":{
+        "idle": [0]
+    }
+}

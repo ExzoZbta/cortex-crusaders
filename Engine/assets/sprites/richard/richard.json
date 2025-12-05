@@ -1,0 +1,16 @@
+{
+    "filepath":"./assets/sprites/richard/spritesheets/richard-sheet.bmp",
+    "format":{
+        "width": 1000,
+        "height": 400,
+        "tileWidth": 250,
+        "tileHeight": 400
+    },
+    "frames": {
+        "left": [0],
+        "right": [1],
+        "forward": [2],
+        "backward": [3],
+        "idle": [2]
+    }
+}

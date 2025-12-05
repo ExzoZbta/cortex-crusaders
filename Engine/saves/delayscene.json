@@ -1,0 +1,1 @@
+[{"sceneName":"main"},{"components":{"script":{"path":"src\/scripts\/mode7_delay_timer_script.d"},"texture":{"path":"assets\/images\/alien_sprite.bmp"}},"name":"alien","parent":"Root","position":{"x":244,"y":244}}]

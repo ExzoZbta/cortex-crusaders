@@ -1,0 +1,12 @@
+{
+    "filepath":"./assets/sprites/crusader/crusader-front.bmp",
+    "format":{
+        "width": 250,
+        "height": 400,
+        "tileWidth": 250,
+        "tileHeight": 400
+    },
+    "frames":{
+        "idle": [0]
+    }
+}

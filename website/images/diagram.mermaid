@@ -1,0 +1,60 @@
+graph TB
+    %% Core Engine
+    GameApp[Game Application]
+    GameLoop[Game Loop System]
+    
+    %% Major Systems
+    subgraph Core Systems
+        ResourceMgr[Resource Manager]
+        SceneMgr[Scene Management System]
+        Mode7Engine[Mode7 Rendering Engine]
+    end
+    
+    subgraph Scene System
+        SceneTree[Scene Tree]
+        GameObject[Game Object System]
+        Components[Component System]
+    end
+    
+    subgraph Component Types
+        Texture[Texture Component]
+        Collision[Collision Component]
+        Script[Script Component]
+        Animation[Animation Component]
+    end
+    
+    %% Editor Integration
+    Editor[Python Editor Interface]
+    
+    %% Core Relationships
+    GameApp --> GameLoop
+    GameLoop --> ResourceMgr
+    GameLoop --> SceneMgr
+    GameLoop --> Mode7Engine
+    
+    %% Scene Management
+    SceneMgr --> SceneTree
+    SceneTree --> GameObject
+    GameObject --> Components
+    
+    %% Component System
+    Components --> Texture
+    Components --> Collision
+    Components --> Script
+    Components --> Animation
+    
+    %% Resource Management
+    ResourceMgr --> |Manages|Components
+    
+    %% Editor Integration
+    Editor -.->|Game Manipulation|GameApp
+    Editor -.->|Scene Manipulation|SceneMgr
+    
+    %% Styling
+    classDef system fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef component fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef core fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class GameApp,GameLoop core
+    class ResourceMgr,SceneMgr,Mode7Engine,SceneTree,GameObject system
+    class Texture,Collision,Script,Animation,Components component
