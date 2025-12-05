@@ -1,4 +1,4 @@
-# Mike's Mode7 Massacre
+# Mike's Mode7 Massacre - [**View Project Website**](https://exzoz.github.io/cortex-crusaders/)
 
 A 2D/3D hybrid game engine built in D with SDL2, featuring Mode7 rendering capabilities and a comprehensive component-based architecture.
 
@@ -8,8 +8,6 @@ A 2D/3D hybrid game engine built in D with SDL2, featuring Mode7 rendering capab
 ## About the Project
 
 Mike's Mode7 Massacre is a custom game engine developed from scratch that showcases advanced rendering techniques and modern game engine architecture. The engine powers a pseudo-3D exploration game where players navigate a Mode7-rendered world collecting capsules while avoiding obstacles.
-
-[**View Project Website**](https://exzoz.github.io/cortex-crusaders/)
 
 ## Core Features
 
