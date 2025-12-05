@@ -9,7 +9,7 @@
     <style>
         @font-face {
             font-family: 'PixelatedElegance';
-            src: url('fonts/PixelatedElegance.ttf') format('truetype');
+            src: url('./fonts/PixelatedElegance.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -79,15 +79,15 @@
             <h2 class="text-3xl font-bold mb-6 text-center">Game Screenshots</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                    <img src="images/screenshot_1.png" alt="Game Screenshot 1" 
+                    <img src="./images/screenshot_1.png" alt="Game Screenshot 1" 
                          class="rounded-lg shadow-md w-full transition-shadow duration-300 group-hover:shadow-xl screenshot-img">
                 </div>
                 <div class="group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                    <img src="images/screenshot_2.png" alt="Game Screenshot 2" 
+                    <img src="./images/screenshot_2.png" alt="Game Screenshot 2" 
                          class="rounded-lg shadow-md w-full transition-shadow duration-300 group-hover:shadow-xl screenshot-img">
                 </div>
                 <div class="group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                    <img src="images/screenshot_3.png" alt="Game Screenshot 3" 
+                    <img src="./images/screenshot_3.png" alt="Game Screenshot 3" 
                          class="rounded-lg shadow-md w-full transition-shadow duration-300 group-hover:shadow-xl screenshot-img">
                 </div>
             </div>
@@ -95,7 +95,7 @@
 
         <section class="text-center fade-in">
             <h2 class="text-3xl font-bold mb-6">Documentation</h2>
-            <a href="docs/index.html" 
+            <a href="./docs/index.html" 
                class="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg transition-all duration-300 hover:bg-gray-800 hover:shadow-lg">
                 View Doxygen Documentation
             </a>
@@ -104,7 +104,7 @@
         <section class="fade-in">
             <h2 class="text-3xl font-bold mb-6 text-center">Engine Architecture</h2>
             <div class="max-w-5xl mx-auto cursor-pointer">
-                <img src="images/engine_diagram.svg" alt="Engine Architecture Diagram" 
+                <img src="./images/engine_diagram.svg" alt="Engine Architecture Diagram" 
                      class="rounded-lg shadow-lg w-full transition-all duration-300 hover:shadow-xl screenshot-img">
             </div>
         </section>
@@ -113,7 +113,7 @@
             <h2 class="text-3xl font-bold mb-6">Game Binary</h2>
             <div class="max-w-3xl mx-auto space-y-8">
                 <div>
-                    <a href="assets/bin" 
+                    <a href="./assets/bin" 
                        class="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg transition-all duration-300 hover:bg-gray-800 hover:shadow-lg">
                         Download Binary
                     </a>
@@ -134,7 +134,7 @@
                         <div>
                             <h4 class="text-xl font-semibold mb-2">Build Instructions</h4>
                             <div class="bg-gray-900 text-white p-6 rounded-lg font-mono text-sm">
-                                <pre class="whitespace-pre-wrap">$ cd engine
+                                <pre class="whitespace-pre-wrap">$ cd Engine
 $ dub run
                                 </pre>
                             </div>

@@ -1,144 +1,183 @@
-<img align="right" width="300px" src="./media/header.png">
+# Mike's Mode7 Massacre
 
-# The Final Project!
+A 2D/3D hybrid game engine built in D with SDL2, featuring Mode7 rendering capabilities and a comprehensive component-based architecture.
 
-- For this assignment you are going to be building a 'Game Maker' as your final project! 
-- You will use your engine to make a game with at least '3' scenes.
+**Team:** Richard Corrente, Archit Kumar, and Sachin Thakrar  
+**Course:** CPSC 411 - Game Engines
 
-## Logistics
+## About the Project
 
-- You will put all of your code and deliverables in the [Engine](./Engine) directory.
-	- You can have a separate 'game' directory if you otherwise choose.
-<!-- NOTE:  This semester you will be completing the project yourself.
-- You will be working on this assignment as a team on your choice (or a combination) of the Mac, Linux, or Windows Operating Sytstem.
-- Make sure everyone has a way to work on this codebase, with a common set of tools.
-- Everyone should make code contributions to the repository (i.e. everyone should have some commits in the project log)
+Mike's Mode7 Massacre is a custom game engine developed from scratch that showcases advanced rendering techniques and modern game engine architecture. The engine powers a pseudo-3D exploration game where players navigate a Mode7-rendered world collecting capsules while avoiding obstacles.
 
-## Team
+[**View Project Website**](https://exzoz.github.io/cortex-crusaders/)
 
-Team Name: *Edit this to something cool here*
+## Core Features
 
-*TODO*:
-Update your Team member Names here (Up to 4).
+### Rendering System
+- **Mode7 Graphics Engine**: Pseudo-3D rendering technique for creating depth effects with 2D textures
+- **Sprite Rendering**: Support for both static and animated sprites with sprite sheet management
+- **Texture Management**: Efficient resource loading and caching system
+- **Multi-layer Rendering**: Sky, ground, and sprite layers with proper depth sorting
 
-1. *my name is...*
-2. *my name is...*
-3. *my name is...*
-4. *my name is...*
--->
+### Component-Based Architecture
+The engine uses a flexible component system where game objects can have multiple behaviors:
+- **Texture Component**: Handles sprite rendering with animation support
+- **Collision Component**: Manages bounding box collision detection
+- **Script Component**: Enables custom game logic through D scripts
+- **Animation Component**: Controls frame-based sprite animations
+- **Hover Component**: Provides floating/hovering movement effects
 
-## Assignment Milestones
+### Scene Management
+- **Hierarchical Scene Tree**: Organize game objects in parent-child relationships
+- **Scene Serialization**: Save and load scenes to/from JSON format
+- **Multi-Scene Support**: Create and switch between multiple game scenes
+- **Scene Manager**: Centralized scene lifecycle management
 
-1. [Part 1 README](./part1_README.md) 
- 	* Read the project description
-2. [Part 2 README](./part2_README.md) 
- 	* More specific requierments of the project and who is going to be responsible for each part
-3. [Part 3 README](./part3_README.md) 
- 	* Portfolio instructions 	
-<!--4. Team member Evaluation: https://forms.gle/qiD6guzN5W5LxAcV9
- 	* **This must be filled out before the project is due.**
--->
+### Editor Integration
+- **Python-based Editor Interface**: In-engine editor for scene manipulation
+- **Object Editor**: Create, modify, and delete game objects at runtime
+- **Scene Tree Viewer**: Visualize and navigate the scene hierarchy
+- **Live Editing**: Make changes while the game is running
 
-## Universal Resources
+### Resource Management
+- **Singleton Resource Manager**: Centralized asset loading and caching
+- **Image Loading**: Support for BMP and PNG textures
+- **Sound Support**: Audio playback capabilities through SDL_mixer
+- **Memory Efficient**: Automatic resource reuse and cleanup
 
-You will be using SDL to build this project and the same libraries that we have been using during the semester.
+### Animation System
+- **JSON-based Animation Definitions**: Define animations with frame sequences
+- **Sprite Sheet Support**: Load and parse sprite sheets with multiple frames
+- **Animation Sequences**: Create named animation states (idle, walk, etc.)
+- **Frame-based Playback**: Control animation speed and looping
 
-* General SDL programming tutorials: 
-  * http://lazyfoo.net/tutorials/SDL/
-  * [Mike's SDL Playlist](https://www.youtube.com/playlist?list=PLvv0ScY6vfd-p1gSnbQhY7vMe2rng0IL0)
+### Scripting System
+Custom script components for game logic:
+- Movement scripts for player and NPC control
+- Timer-based scene transitions
+- Mode7 rendering toggles
+- Debug visualization tools
 
-# Part 1 and 2 Rubric
-   
-<table>
-  <tbody>
-    <tr>
-      <th>Points</th>
-      <th align="center">Description</th>
-    </tr>	  
-    <tr>
-      <td>25% (Engineering/Design Patterns)</td>
-      <td align="left">On the polish of your final project (did it work as intended, were there bugs, did I have to struggle to get your tool running, was your solution well engineered, were there patterns used, etc.)</td>
-    </tr>
-    <tr>
-      <td>40%  (Requirements)</td>
-      <td align="left">Did you complete all of the requirements from part 2?</td>
-    </tr>
-    <tr>
-      <td>15%% (Wow Factor)</td>
-      <td align="left">On the creativity and overall 'wow' factor of your project. Was there a cool feature or surprise that got me excited about the project? Does this project have potential to be extended in the future? Were there creative additional tools that supported your work. Was there something not covered in class that you were excited about, learned, and implemented anyway? (Document this to bring to my attention if so!)</td>
-    </tr>
-  </tbody>
-</table>
+## Game Features
 
-# Part 3 - Rubric
+The included game demonstrates the engine's capabilities:
+- **Mode7 Exploration**: Navigate a pseudo-3D world with keyboard controls
+- **Collectible System**: Find and collect capsules scattered throughout the world
+- **Score Tracking**: Real-time score display using bitmap fonts
+- **Dynamic Spawning**: Procedural capsule placement with spawn timers
+- **Character Sprites**: Multiple character options with directional animations
 
-<table>
-  <tbody>
-    <tr>
-      <th>Points</th>
-      <th align="center">Description</th>
-    </tr>
-    <tr>
-      <td>4% (Engine Architecture diagram)</td>
-      <td align="left">Did you add the engine architecture diagram to your website "./media/C4Engine.pdf"?</td>
-    </tr>   	  
-    <tr>
-      <td>4% (Documentation)</td>
-      <td align="left">Did you generate something like "http://www.horde3d.org/docs/html/_api.html"?</td>
-    </tr>    
-    <tr>
-      <td>4% (Build)</td>
-      <td align="left">Does the build work when I download your repo and run the game?</td>
-    </tr>
-    <tr>
-      <td>4% (Post mortem)</td>
-      <td align="left">Did you learn anything and provide a brief and well-thought out reflection of these learnings?</td>
-    </tr>
-    <tr>
-      <td>4% (Website)</td>
-      <td align="left">Do you have a webpage that presents your project in a positive way with the above materials.</td>
-    </tr>
-  </tbody>
-</table>
+## Technical Stack
 
-<!--
-# Teammate Evaluation - Rubric (5%)
+- **Language**: D Programming Language
+- **Graphics**: SDL2 (via bindbc-sdl)
+- **Build System**: DUB package manager
+- **Documentation**: Doxygen-generated API docs
+- **Editor**: Python 3 with tkinter
 
-<table>
-  <tbody>
-    <tr>
-      <th>Points</th>
-      <th align="center">Description</th>
-    </tr>
-    <tr>
-      <td>5% (Team member evaluation)</td>
-      <td align="left">Did you fill it out? How did your teammates rate you?</td>
-    </tr> 
-  </tbody>
-</table>
+## Installation
 
+### Prerequisites
+- D compiler (DMD, LDC, or GDC)
+- DUB package manager
+- SDL2 (version 2.0.16 or higher)
+- Python 3 with tkinter (for editor)
 
-**Note: Everyone on your team earns the same grade for all parts of the project.**
+### Building from Source
 
-## Notes on working in teams
+```bash
+cd Engine
+dub run
+```
 
-* Pragmatically
-	* It is useful to work in separate branches in git, and then merge your code to master, and then resolve the merge conflicts (ideally with the person you are working with).
-	* If you are uncomfortable with this in github, then pair programming may be a viable option (I do however want to see commits from everyone).
-* On working with others
-	* Be responsive
-		* Check your email, respond to your teammates within 24-48 hours on the preferred communication platform
-	* Be proactive
-		* Alert the course staff if there are issues sooner rather than later--we cannot do anything the last day before the project is due.
-	* Contribute
-		* The course staff looks at the commit logs to make sure everyone participated (No free rides--earn your grade!)
-		* Note: One team member doing all the work is not heroic either
-			* Balance the work load--no one should complete more than 50% of the project on a 4 person team for example.
+### Platform-Specific Notes
 
-#### More Resources on working in Teams
+**macOS:**
+```bash
+brew install python-tk
+```
 
-* [What Makes a Winning Game Development Team?](http://www.bitmascot.com/what-makes-a-successful-game-team/)
-* [The 3 C's of being a captain](https://appliedsportpsych.org/resources/resources-for-athletes/the-3-c-s-of-being-a-captain/)
-* [Etiquette for Pair Programming](https://dzone.com/articles/etiquette-for-pair-programming)
+**Windows/Linux:**
+Ensure SDL2 development libraries are installed and accessible.
 
--->
+## 🎮 How to Play
+
+1. Launch the game engine
+2. Press **E** to open the in-engine editor
+3. In the Scene Manager window, click "Load Scene"
+4. Select `mainmenu.json` from the saves directory
+5. Close the editor and start playing!
+
+**Controls:**
+- Arrow keys or WASD: Move player
+- E: Toggle editor mode
+
+## Documentation
+
+Full API documentation is available in the `docs/` folder. Open `docs/index.html` in your browser to explore the complete codebase documentation.
+
+Key modules:
+- `gameapplication.d` - Main application loop and initialization
+- `mode.d` - Mode7 rendering engine implementation
+- `gameobject.d` - Game object and component management
+- `scenemanager.d` - Scene lifecycle and switching
+- `component.d` - All component type definitions
+- `animation.d` - Animation system implementation
+
+## Engine Architecture
+
+The engine follows a modular, component-based design:
+
+```
+Game Application
+├── Resource Manager (Singleton)
+├── Scene Manager
+│   └── Scene Tree
+│       └── Game Objects
+│           └── Components (Texture, Collision, Script, etc.)
+├── Mode7 Rendering Engine
+└── Editor Interface (Python)
+```
+
+See `images/engine_diagram.svg` for a detailed architecture diagram.
+
+## Assets
+
+The engine includes:
+- Custom pixel art sprites for multiple characters
+- Mode7-compatible ground and sky textures
+- Bitmap font for text rendering
+- Sound effects for gameplay events
+
+## Post Mortem
+
+Implementing Mode7 proved more challenging than anticipated, particularly with sprite positioning relative to the camera. Despite spending considerable time on this issue, the team successfully integrated Mode7 rendering into the engine and created a functional game demonstrating the technology.
+
+**What Went Well:**
+- Successfully implemented Mode7 rendering from scratch
+- Created a flexible component-based architecture
+- Built a functional in-engine editor
+- Achieved scene serialization and loading
+
+**Challenges:**
+- Static sprite positioning in Mode7 space required compromises
+- Time constraints limited full feature implementation
+- Some editor features incomplete for Mode7 mode
+
+**Lessons Learned:**
+- Importance of time management and feature prioritization
+- Value of modular architecture for game engines
+- Complexity of pseudo-3D rendering techniques
+- Benefits of component-based design patterns
+
+Given more time, the team would have refined the Mode7 sprite system, enhanced the editor UI, and implemented additional gameplay features.
+
+## License
+
+This project was created as a final for CPSC 411 at Yale College.
+
+## Links
+
+- [Project Website](https://exzoz.github.io/cortex-crusaders/)
+- [Video Description](https://www.youtube.com/embed/Ndv4Np7hmxY)
+- [API Documentation](docs/index.html)
