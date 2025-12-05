@@ -170,14 +170,14 @@ Implementing Mode7 proved more challenging than anticipated, particularly with s
 - Complexity of pseudo-3D rendering techniques
 - Benefits of component-based design patterns
 
-Given more time, the team would have refined the Mode7 sprite system, enhanced the editor UI, and implemented additional gameplay features.
+Given more time, we would like to refine the Mode7 sprite system further, enhance the editor UI, and implement additional gameplay features.
 
 ## License
 
-This project was created as a final for CPSC 411 at Yale College.
+This project was created as a final project for CPSC 411 at Yale College.
 
 ## Links
 
-- [Project Website](https://exzoz.github.io/cortex-crusaders/)
+- [Project Website](https://exzozbta.github.io/cortex-crusaders/)
 - [Video Description](https://www.youtube.com/embed/Ndv4Np7hmxY)
-- [API Documentation](docs/index.html)
+- [API Documentation]([docs/index.html](https://exzozbta.github.io/cortex-crusaders/docs/index.html))
